@@ -17,6 +17,17 @@ module.exports = (req, res) => {
   const videoId = req.params.id;
   const type = req.query.type || defaultType;
   const videoUrl = `http://www.youtube.com/watch?v=${videoId}`;
+  const mediaTypes = {
+    audio: {
+      filter: 'audioonly',
+      contentType: 'audio/mp3'
+    },
+    video: {
+      filter: 'video',
+      contentType: 'video/mp4'
+    }
+  };
+  const mediaType = mediaTypes[type];
 
   if (!ytdl.validateID(videoId)) {
     return res.status(500).json({
@@ -32,30 +43,24 @@ module.exports = (req, res) => {
     });
   }
 
-  ytdl.getBasicInfo(videoUrl, error => {
-    if (error) {
-      return res.status(500).json({
-        status: 'error',
-        message: 'This video is unavailable'
-      });
-    }
-
-    const mediaTypes = {
-      audio: {
-        quality: 'highestaudio',
-        contentType: 'audio/mp3'
-      },
-      video: {
-        quality: 'highestvideo',
-        contentType: 'video/mp4'
+  ytdl.getBasicInfo(
+    videoUrl,
+    {
+      filter: mediaType.filter
+    },
+    error => {
+      if (error) {
+        return res.status(500).json({
+          status: 'error',
+          message: 'This video is unavailable'
+        });
       }
-    };
-    const mediaType = mediaTypes[type];
 
-    res.set('content-type', mediaType.contentType);
+      res.set('content-type', mediaType.contentType);
 
-    return ytdl(videoUrl, {
-      quality: mediaType.quality
-    }).pipe(res);
-  });
+      return ytdl(videoUrl, {
+        filter: mediaType.filter
+      }).pipe(res);
+    }
+  );
 };
