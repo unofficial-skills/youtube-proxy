@@ -1,0 +1,11 @@
+# dependencies
+node_modules
+
+# IDEs
+
+# Visual Studio
+.vscode
+*.code-workspace
+
+# misc
+.DS_Store

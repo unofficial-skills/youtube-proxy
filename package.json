@@ -1,0 +1,20 @@
+{
+  "name": "youtube-proxy",
+  "version": "0.0.0",
+  "description": "YouTube proxy API that search and stream videos/audios",
+  "author": "Luis Miguel Vicente Fuentes <kijart@gmail.com>",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run start:pro",
+    "start:dev": "nodemon src/index.js",
+    "start:pro": "node src/index.js",
+    "lint": "eslint src/**"
+  },
+  "dependencies": {
+    "express": "4.17.1"
+  },
+  "devDependencies": {
+    "eslint": "6.6.0",
+    "nodemon": "2.0.0"
+  }
+}
