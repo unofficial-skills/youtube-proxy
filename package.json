@@ -1,6 +1,6 @@
 {
   "name": "youtube-proxy",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "YouTube proxy API that search and stream videos/audios",
   "author": "Luis Miguel Vicente Fuentes <kijart@gmail.com>",
   "repository": {
