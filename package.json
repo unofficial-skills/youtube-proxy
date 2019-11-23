@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "express": "4.17.1",
+    "ytdl-core": "1.0.1",
     "ytsr": "0.1.10"
   },
   "devDependencies": {
