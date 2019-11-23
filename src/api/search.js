@@ -4,7 +4,7 @@ const ytsr = require('ytsr');
  * Module for searching YouTube videos
  *
  * Query params
- * query: string to search for
+ * query: string to search for (required)
  * limit: limits the pulled items (default 1)
  *
  */
@@ -12,6 +12,13 @@ const ytsr = require('ytsr');
 module.exports = (req, res) => {
   const limit = req.query.limit || 1;
   const searchString = req.query.query;
+
+  if (!searchString) {
+    return res.status(500).json({
+      status: 'error',
+      message: "'query' param is required"
+    });
+  }
 
   ytsr.getFilters(searchString, (error, filters) => {
     if (error) {
