@@ -4,6 +4,9 @@
   "description": "YouTube proxy API that search and stream videos/audios",
   "author": "Luis Miguel Vicente Fuentes <kijart@gmail.com>",
   "main": "index.js",
+  "engines": {
+    "node": "12.6.0"
+  },
   "scripts": {
     "start": "npm run start:pro",
     "start:dev": "nodemon src/index.js",
