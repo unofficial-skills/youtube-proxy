@@ -17,7 +17,7 @@ Play:
 
 ### Manual
 
-- Node version: `12.6.0`
+- Node version: `12`
 - Install dependencies: `npm install`
 - Run: `npm start`
 

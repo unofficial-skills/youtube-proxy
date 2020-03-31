@@ -1,11 +1,12 @@
 version: '3'
+
 services:
   app:
-    image: node:12.6.0-alpine
-    container_name: 'youtube-proxy'
+    image: node:12-alpine
+    container_name: youtube-proxy
     ports:
-      - '3000:3000'
+      - 3000:3000
     volumes:
       - .:/app
     working_dir: /app
-    command: 'npm start'
+    command: npm start
