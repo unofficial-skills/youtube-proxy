@@ -9,7 +9,7 @@
   },
   "main": "src/index.js",
   "engines": {
-    "node": "12.6.0"
+    "node": "12"
   },
   "scripts": {
     "start": "npm run start:pro",
