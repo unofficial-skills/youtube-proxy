@@ -4,9 +4,20 @@ YouTube proxy API that search and stream videos/audios
 
 ## Usage
 
+Search:
+
+- `/api/search?query=:searchString` (default limit 1)
+- `/api/search?query=:searchString&limit=5`
+
+Play:
+
+- `/api/play/:id` (default type video)
+- `/api/play/:id?type=video`
+- `/api/play/:id?type=audio`
+
 ### Manual
 
-- Node version: `12.6.0`
+- Node version: `12`
 - Install dependencies: `npm install`
 - Run: `npm start`
 
