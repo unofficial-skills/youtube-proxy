@@ -2,7 +2,7 @@
   "name": "youtube-proxy",
   "version": "1.0.0",
   "description": "YouTube proxy API that search and stream videos/audios",
-  "author": "Luis Miguel Vicente Fuentes <kijart@gmail.com>",
+  "author": "Luis Miguel Vicente Fuentes",
   "repository": {
     "type": "git",
     "url": "https://github.com/kijart/youtube-proxy"
