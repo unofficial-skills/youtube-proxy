@@ -2,7 +2,7 @@
   "name": "youtube-proxy",
   "version": "1.0.0",
   "description": "YouTube proxy API that search and stream videos/audios",
-  "author": "Luis Miguel Vicente Fuentes <kijart@gmail.com>",
+  "author": "Luis Miguel Vicente Fuentes",
   "repository": {
     "type": "git",
     "url": "https://github.com/kijart/youtube-proxy"
@@ -19,11 +19,11 @@
   },
   "dependencies": {
     "express": "4.17.1",
-    "ytdl-core": "2.0.1",
+    "ytdl-core": "3.2.2",
     "ytsr": "0.1.12"
   },
   "devDependencies": {
-    "eslint": "6.8.0",
-    "nodemon": "2.0.2"
+    "eslint": "7.7.0",
+    "nodemon": "2.0.4"
   }
 }
