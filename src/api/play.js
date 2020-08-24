@@ -11,7 +11,7 @@ const ytdl = require('ytdl-core');
  *
  */
 
-module.exports = (req, res) => {
+module.exports = async (req, res) => {
   const defaultType = 'video';
   const validTypes = ['audio', 'video'];
   const videoId = req.params.id;
@@ -43,24 +43,21 @@ module.exports = (req, res) => {
     });
   }
 
-  ytdl.getBasicInfo(
-    videoUrl,
-    {
+  await ytdl
+    .getBasicInfo(videoUrl, {
       filter: mediaType.filter
-    },
-    error => {
-      if (error) {
-        return res.status(500).json({
-          status: 'error',
-          message: 'This video is unavailable'
-        });
-      }
-
+    })
+    .then(() => {
       res.set('content-type', mediaType.contentType);
 
       return ytdl(videoUrl, {
         filter: mediaType.filter
       }).pipe(res);
-    }
-  );
+    })
+    .catch(() => {
+      return res.status(500).json({
+        status: 'error',
+        message: 'This video is unavailable'
+      });
+    });
 };
