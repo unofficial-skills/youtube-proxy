@@ -1,0 +1,7 @@
+ {
+  "name": "YouTube-Proxy",
+  "description": "An open source YouTube proxy",
+  "repository": "https://github.com/kijart/youtube-proxy",
+  "logo": "https://pngimg.com/uploads/youtube/youtube_PNG21.png",
+  "keywords": ["youtube", "youtube-scrape", "open-source"]
+}
